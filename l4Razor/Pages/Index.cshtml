@@ -7,7 +7,10 @@
     <div class="HeadContent">
 
         <div class="HeadText">Добро пожаловать в Уникс @Model.HelloUser()</div>
-        <div class="HeadIcon"><a asp-page="/PersonalPage"><img src="@Model.PictureUrl" alt="Profile Picture"></a></div>
+        <div class="ProfileInfo">
+              <div class="ProfileName">Профиль</div>
+              <div class="HeadIcon"><a asp-page="/PersonalPage"><img src="@Model.PictureUrl" alt="Profile Picture"></a></div>
+        </div>
 
     </div>
 

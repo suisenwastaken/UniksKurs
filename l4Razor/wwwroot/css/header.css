@@ -15,6 +15,37 @@
     color: #403937;
 }
 
+.HeadIcon{
+    width: 40px;
+    height: 40px;
+}
+
+.ProfileInfo{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    box-shadow: 0px 4px 16px rgba(22, 22, 22, 0.1);
+
+    /*transition: 0.7s;*/
+}
+
+/*.ProfileInfo:hover{
+    background-color: #3A41ED;
+    color: white;
+}*/
+
+
 .HeadSearch{
     width: 100%;
     display: flex;
