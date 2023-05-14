@@ -32,7 +32,7 @@
 
     <div class="LoginCardInputBlock">
         <div class="LoginCardInputTitle">Ваше имя:</div>
-        <input type="text" asp-for = "Message.Name" class="LoginCardInput" placeholder = "Антон">
+        <input type="text" asp-for = "Message.Name" class="LoginCardInput" placeholder = "Антон" value="@Model.UserName">
         <span asp-validation-for="Message.Name" class="ErrorText"></span>
     </div>
 

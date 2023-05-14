@@ -6,10 +6,10 @@
 
     <div class="HeadContent">
 
-        <div class="HeadText">Добро пожаловать в Уникс @Model.HelloUser()</div>
+        <div class="HeadText">Добро пожаловать в Уникс, @Model.HelloUser()</div>
         <a asp-page="/PersonalPage" class="ProfileInfo">
-              <div class="ProfileName">Профиль</div>
-              <div class="HeadIcon"><img src="@Model.PictureUrl" alt="Profile Picture"></div>
+            <div class="HeadIcon"><img src="@Model.PictureUrl" alt="Profile Picture"></div>
+            <div class="ProfileName">@Model.HelloUser()</div>
         </a>
 
     </div>

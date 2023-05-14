@@ -38,8 +38,8 @@
 
         <div class="HeadText">Список коллективов</div>
         <a asp-page="/PersonalPage" class="ProfileInfo">
-              <div class="ProfileName">Профиль</div>
-              <div class="HeadIcon"><img src="@Model.PictureUrl" alt="Profile Picture"></div>
+            <div class="HeadIcon"><img src="@Model.PictureUrl" alt="Profile Picture"></div>
+            <div class="ProfileName">@Model.HelloUser()</div>
         </a>
         
     </div>

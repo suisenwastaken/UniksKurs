@@ -50,12 +50,7 @@ namespace l4Razor.Pages
         
         public string HelloUser()
         {
-            if (UserName != null)
-            {
-                return ", " + UserName;
-            }
-            
-            return String.Empty;
+            return UserName ?? "Гость";
         }
 
         public async Task<IActionResult> OnPost()
@@ -67,7 +62,7 @@ namespace l4Razor.Pages
             
             UserName = HttpContext.User.Claims.Where(c => c.Type == ClaimTypes.Surname).Select(c => c.Value).SingleOrDefault();
 
-            FeedbackMessage.Name = UserName ?? "Аноним";
+            FeedbackMessage.Name = UserName ?? "Гость";
 
             FeedbackMessage.Theme = "Что нового";
             FeedbackMessage.MessageText = UserMessage;

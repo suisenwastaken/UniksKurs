@@ -25,7 +25,7 @@
     padding: 10px;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
     background: #FFFFFF;
     border-radius: 8px;
@@ -46,6 +46,9 @@
     color: white;
 }*/
 
+.ProfileName{
+    color: #403937;
+}
 
 .HeadSearch{
     width: 100%;

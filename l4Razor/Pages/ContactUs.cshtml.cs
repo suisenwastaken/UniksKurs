@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using l4Razor.Data;
@@ -12,12 +14,18 @@ namespace l4Razor.Pages
     {
 
         private readonly NewDbContext _context;
+        public string? UserName { get; set; }
         
        public ContactUs(NewDbContext context)
        {
            _context = context;
        }
-       
+
+       public void OnGet()
+       {
+           UserName = HttpContext.User.Claims.Where(c => c.Type == ClaimTypes.Surname).Select(c => c.Value).SingleOrDefault();
+       }
+
        public async Task<IActionResult> OnPost()
        {
            if (!ModelState.IsValid)
