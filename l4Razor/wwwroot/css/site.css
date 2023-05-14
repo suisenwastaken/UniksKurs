@@ -1,0 +1,102 @@
+tml {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.btn {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #198754;
+  color: white;
+}
+
+
+.EmptyMessage{
+  display: flex;
+  margin: 0 auto;
+}
+
+.NewIssue{
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+
+.BackgroundCard{
+  margin: 10px;
+}
+
+.FormGroup{
+  margin-bottom: 15px;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.FormLabel{
+  width: 30%;
+  font-size: 20px;
+}
+
+.TextError{
+  color: darkred;
+  float: right;
+  font-size: 15px;
+}
+
+.FormInput{
+  width: 70%;
+  font-size: 20px;
+  float: right;
+}
+
+.FormSelect{
+  width: 70%;
+  font-size: 20px;
+  float: right;
+}
+
+.Title{
+  font-size: 35px;
+}
+
+.AddButton{
+  float:right;
+}
+
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 30%;
+  margin: 10px;
+}
+
+.IndexContent{
+  display: flex;
+  justify-content: center;
+}

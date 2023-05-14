@@ -1,0 +1,70 @@
+.HeadContent{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.HeadText{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: #403937;
+}
+
+.HeadSearch{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.HeadSearchBar{
+    width: 90%;
+
+    background: #FFFFFF;
+    border: 0.7px solid #E3E3E3;
+    box-shadow: 0px 4px 16px rgba(22, 22, 22, 0.1);
+    border-radius: 8px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    padding-left: 2%;
+}
+
+.HeadButton{
+    width: auto;
+    margin-left: 2%;
+    border-radius: 5px;
+    background-color: #3A41ED;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 12px 32px;
+    border: none;
+}
+
+.HeadButtonText{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+.SelectPlace{
+    margin: 0;
+}
+
+.HeadIcon{
+    width: 64px;
+    height: 64px;
+}

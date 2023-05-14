@@ -1,0 +1,60 @@
+﻿@page
+@model l4Razor.Pages.Schedule
+
+@{
+    ViewData["Title"] = "Раписание";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Расписание</title>
+    
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <script src="site.js"></script>
+    
+    <style>
+    
+        body{
+        overflow: hidden;
+        }
+        
+    </style>
+    
+</head>
+<body>
+ 
+<div class="HeadContent">
+
+    <div class="HeadText" id="HeadText">Раcписание залов - </div>
+    <div class="HeadIcon"><a asp-page="/PersonalPage"><img src="@Model.PictureUrl" alt="Profile Picture"></a></div>
+
+</div>
+
+<select class="SelectPlace HeadButton HeadButtonText" id="SelectImage" onchange="showimage(this)">
+    <option value="" disabled selected hidden>Выбор зала</option>
+    <option value="0">Айрин</option>
+    <option value="1">Архив</option>
+    <option value="2">Ода</option>
+    <option value="3">ТанцКласс</option>
+    <option value="4">Театр</option>
+</select>
+
+<div id="ImageBlock"></div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@page
+@model l4Razor.Pages.Login
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylelogin.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="Logo"><a asp-page = "/Index"><img src="css/images/Vector.png" alt="Website Logo"></a></div>
+
+<form class="LoginCard" method="Post">
+
+
+    <div class="LoginCardTitle">Вход</div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Логин:</div>
+        <input type="text" asp-for="User.UserName" class="LoginCardInput" placeholder = "suisenwastaken">
+        <span asp-validation-for="User.UserName" class="ErrorText"></span>
+    </div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Пароль:</div>
+        <input type="password" asp-for = "User.Password" class="LoginCardInput" placeholder = "123456">
+        <span asp-validation-for="User.Password" class="ErrorText"></span>
+        @Html.ValidationMessage("IncorrectPassword")
+    </div>
+
+    <div class="LoginButtons">
+        <button class="LoginButton">Войти</button>
+    </div>
+    
+    <a asp-page = "Registration" class="NotRegistrated">Не зарегистрированы? Зарегистрируйтесь!</a>
+
+</form>
+
+    
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿@page
+@using Humanizer
+@model IndexModel
+@{
+    ViewData["Title"] = "Главная";
+}
+
+    <div class="HeadContent">
+
+        <div class="HeadText">Добро пожаловать в Уникс @Model.HelloUser()</div>
+        <div class="HeadIcon"><a asp-page="/PersonalPage"><img src="@Model.PictureUrl" alt="Profile Picture"></a></div>
+
+    </div>
+
+    <form method="Post" class="HeadSearch">
+
+      <input asp-for="UserMessage" type="text" class="HeadSearchBar" placeholder="Расскажите нам, как у вас дела...">
+      <button type="submit" class="Button, HeadButton"><span class="material-symbols-outlined">done</span><span class="HeadButtonText">Отправить</span></button>
+
+    </form>
+
+    <div class="NewsAndCalendar">
+
+        <div class="NewsBlock">
+
+            <div class="NewsTitle">Новости</div>
+
+
+            @foreach (var news in Model.News)
+            {
+                var temp = news.TagsList;
+                if (news.NewsType == 0)
+                {
+                    <div class="NewsCard">
+
+                        <div class="NewsCardTitle">@news.Title</div>
+                        <div class="NewsCardDescription">@news.Description</div>
+                        <div class="NewsCardTags">
+
+                            @foreach (var tag in Model.Tags)
+                            {
+                                if (news.TagsList.Contains(tag))
+                                {
+                                    <div class="NewsCardTag">@tag.TagName</div>
+                                }
+                            }
+
+                        </div>
+
+                    </div>
+                }
+
+            }
+
+        </div>
+
+        <div class="NewsBlock">
+
+            <div class="NewsTitle">Календарь Событий</div>
+
+            @foreach (var news in Model.News)
+            {
+                if (news.NewsType == 1)
+                {
+                    <div class="NewsCard">
+
+                        <div class="NewsCardTitleAndData">
+                            <div class="NewsCardTitle">@news.Title</div>
+                            <div class="NewsCardData">@news.TakePlace</div>
+                        </div>
+                        <div class="NewsCardDescription">@news.Description</div>
+                        <div class="NewsCardTags">
+
+                            @foreach (var tag in Model.Tags)
+                            {
+                                if (news.TagsList.Contains(tag))
+                                {
+                                    <div class="NewsCardTag">@tag.TagName</div>
+                                }
+                            }
+
+                        </div>
+
+                    </div>
+                }
+
+            }
+
+
+        </div>
+
+    </div>
+    

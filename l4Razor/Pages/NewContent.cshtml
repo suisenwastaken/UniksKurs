@@ -1,0 +1,78 @@
+﻿@page
+@model l4Razor.Pages.Shared.NewContent
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая запись</title>
+
+    
+    <script src="js/site.js"> </script>
+    <script src="js/multiselect-dropdown.js"> </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylelogin.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="Logo"><a asp-page = "/Index"><img src="css/images/Vector.png" alt="Website Logo"></a></div>
+
+
+    <form method = "post" class="LoginCard">
+
+        <div class="LoginCardTitle">Добавление новой записи</div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "New.Title" class="LoginCardInputTitle">Заголовок:</div>
+            <input asp-for = "New.Title" type="text" class="LoginCardInput" placeholder = "Название новости">
+            <span asp-validation-for="New.Description" class="ErrorText"></span>
+        </div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "New.Description" class="LoginCardInputTitle">Описание:</div>
+            <input asp-for = "New.Description" type="text" class="LoginCardInput" placeholder = "Описание новости">
+            <span asp-validation-for="New.Description" class="ErrorText"></span>
+        </div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "SelectedTags" class="LoginCardInputTitle">Выбор Тегов:</div>
+            <select multiple asp-for = "SelectedTags" asp-items = "Model.TagList"  class="LoginCardInput" id ="LoginCardInput"> </select>
+        </div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "New.NewsType" class="LoginCardInputTitle">Тип:</div>
+            <select asp-for = "New.NewsType" class="LoginCardInput" id="TypeSelect" onclick="showdata()">
+                <option value = "0">Новость</option>
+                <option value = "1">Мероприятие</option>
+            </select>
+        </div>
+
+        <div class="LoginCardInputBlock" id="DataSelect">
+            <div asp-for = "New.TakePlace" class="LoginCardInputTitle">Дата проведения:</div>
+            <div class="LoginCardDataAndTime">
+                <input asp-for = "New.TakePlace" type="datetime-local" class="LoginCardInput" value="2023-05-01">
+                @*<input asp-for = "New.TakePlace" type="time" class="LoginCardInput" value="12:00">*@
+            </div>
+        </div>
+
+        <div class="LoginButtons">
+            <button class="LoginButton">Добавить</button>
+        </div>
+
+    </form>
+    
+</body>
+</html>

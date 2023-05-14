@@ -1,0 +1,71 @@
+﻿@page
+@model l4Razor.Pages.Shared.NewCollective
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новый коллектив</title>
+
+    
+    <script src="js/site.js"> </script>
+    <script src="js/multiselect-dropdown.js"> </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylelogin.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="Logo"><a asp-page = "/Index"><img src="css/images/Vector.png" alt="Website Logo"></a></div>
+
+
+    <form method = "post" class="LoginCard">
+
+        <div class="LoginCardTitle">Добавление нового коллектива</div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "CollectiveCollectiveName" class="LoginCardInputTitle">Название:</div>
+            <input asp-for = "Collective.CollectiveName" type="text" class="LoginCardInput" placeholder = "Название коллектива">
+            <span asp-validation-for="Collective.CollectiveName" class="ErrorText"></span>
+        </div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "Collective.CollevtiveDescription" class="LoginCardInputTitle">Описание:</div>
+            <input asp-for = "Collective.CollevtiveDescription" type="text" class="LoginCardInput" placeholder = "Описание коллектива">
+        </div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "Collective.CollectiveLeaderContuct" class="LoginCardInputTitle">Контакт(tg):</div>
+            <input asp-for = "Collective.CollectiveLeaderContuct" type="text" class="LoginCardInput" placeholder = "TelegramId">
+        </div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "Collective.InstituteOfCollective" class="LoginCardInputTitle">Институт:</div>
+            <select asp-for = "SelectedInstitute" asp-items="Model.InstituteList" class="LoginCardInput" id="TypeSelect"></select>
+        </div>
+
+        <div class="LoginCardInputBlock">
+            <div asp-for = "Collective.ThemeOfCollective" class="LoginCardInputTitle">Направление:</div>
+            <select asp-for = "SelectedTheme" asp-items="Model.ThemeList" class="LoginCardInput" id="TypeSelect"></select>
+        </div>
+
+        <div class="LoginButtons">
+            <button class="LoginButton">Добавить</button>
+        </div>
+
+    </form>
+    
+</body>
+</html>

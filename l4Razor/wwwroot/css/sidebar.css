@@ -1,0 +1,56 @@
+.Sidebar{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  gap: 36px;
+  color: white;
+  flex-wrap: wrap;
+  
+  max-width: 200px;
+}
+
+.Sidebar > .Logo{
+  margin-top:32px;
+  margin-left: 35px;
+  margin-bottom: 15px;
+}
+
+
+ul.SidebarContent{
+  list-style-type:none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 19px;
+}
+
+li.SidebarText > a{
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+li.SidebarTextSelected > a{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: white;
+}
+
+li.SidebarTextNotSelected > a{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #B3C8FF;
+}
+
+.material-symbols-outlined{
+  margin-right: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

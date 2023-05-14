@@ -1,0 +1,139 @@
+﻿@page
+@using System.Security.Claims
+@model l4Razor.Pages.PersonalPage
+
+@{
+    ViewData["Title"] = "Профиль";
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Профиль</title>
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/news.css">
+  <link rel="stylesheet" href="css/profile.css">
+  
+
+  <script src="multiselect-dropdown.js"></script>
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+
+<div class="HeaderContent">
+
+  <div class="ProfileTitle">Ваш личный кабинет @Model.HelloUser()</div>
+  
+  
+  <div class="HeaderButtons">
+  @if (Model.RoleOfUser == "2")
+    {
+      <a asp-page="/NewContent"><button type="button" class="HeaderButton">+Запись</button></a>
+      <a asp-page="/NewTag"><button type="button" class="HeaderButton">+Тег</button></a>
+      <a asp-page="NewCollective"><button type="button" class="HeaderButton">+Коллектив</button></a>
+    }
+  <form method="post"><button type="submit" class="HeaderButton LogoutButton">Выйти</button></form>
+  </div>
+  
+
+</div>
+
+<div class="ProfileContent">
+  <div class="SideProfileContent">
+    <img class= "ProfileIcon" src="@Model.PictureUrl" alt="Profile Picture">
+
+    <div class="LoginCardInputBlock">
+      <div class="LoginCardInputTitle">Ваш лоигн:</div>
+      <input type="text" disabled value="@Model.Login" class="LoginCardInput" placeholder = "Логин для входа в систему">
+    </div>
+
+    <div class="LoginCardInputBlock">
+      <div class="LoginCardInputTitle">Ваше имя:</div>
+      <input type="text" disabled value="@Model.UserName" class="LoginCardInput" placeholder = "Логин для входа в систему">
+    </div>
+
+    <div class="LoginCardInputBlock">
+      <div class="LoginCardInputTitle">Дата регистрации:</div>
+      <input type="text" disabled value="@Model.DateOfregistration" class="LoginCardInput" placeholder = "Логин для входа в систему">
+    </div>
+
+  </div>
+
+  <div class="MainProfileContent">
+    
+    @if (Model.RoleOfUser == "1")
+    {
+
+      <div class="NewsTitle">Ваши коллективы:</div>
+
+      <div class="NewsBlock">
+
+        @foreach(var col in Model.Collectives)
+      {
+
+        <div class="NewsCard">
+
+          <div class="NewsCardTitle">@col.CollectiveName</div>
+          <div class="NewsCardDescription">@col.CollevtiveDescription</div>
+          <div class="NewsCardDescription">tg: @col.CollectiveLeaderContuct</div>
+          <div class="NewsCardTags">
+
+            <div class="NewsCardTag">@col.InstituteOfCollective.InstituteName</div>
+            <div class="NewsCardTag">@col.ThemeOfCollective.ThemeName</div>
+
+          </div>
+
+        </div>
+      }
+        
+      </div>
+    }
+    
+    @if (Model.RoleOfUser == "2")
+        {
+    
+          <div class="NewsTitle">Обращения пользователей:</div>
+    
+          <div class="NewsBlock">
+    
+            @foreach(var mes in Model.Messages)
+          {
+    
+            <div class="NewsCard">
+    
+              <div class="NewsCardTitle">@mes.Theme</div>
+              <div class="NewsCardDescription">@mes.MessageText</div>
+              <div class="NewsCardTags">
+    
+                <div class="NewsCardTag">@mes.Name</div>
+                <div class="NewsCardTag">@mes.DateOfMessage</div>
+    
+              </div>
+    
+            </div>
+          }
+            
+          </div>
+        }
+
+  </div>
+
+</div>
+
+</body>
+</html>

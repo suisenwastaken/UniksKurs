@@ -1,0 +1,76 @@
+﻿@page
+@model l4Razor.Pages.Registration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylelogin.css">
+
+    <script src="js/site.js"></script>
+    <script src="js/multiselect-dropdown.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+
+    <div class="Logo"><a asp-page = "/Index"><img src="css/images/Vector.png" alt="Website Logo"></a></div>
+
+<form class="LoginCard" method="post">
+
+
+    <div class="LoginCardTitle">Регистрация</div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Выберите аватар и Имя:</div>
+        <div class="LoginCardInputBlockRow">
+            <img class="ProfileImage" id="ProfileImage" src="https://api.dicebear.com/6.x/big-smile/svg?seed=Fluffy&scale=110&radius=50&backgroundColor=b6e3f4" alt="Profile Icon">
+            <input type="hidden" id="PictureUrl" asp-for="src">
+            <button type="button" class="ChangeButton" onclick="ChangeIcon()"><span class="material-symbols-outlined">refresh</span></button>
+            <input type="text" asp-for="User.FirstName" class="LoginCardInput NameInput" placeholder = "Видимое имя">
+        </div>
+        <span asp-validation-for="User.FirstName" class="ErrorText"></span>
+    </div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Логин:</div>
+        <input type="text" asp-for="User.UserName" class="LoginCardInput" placeholder = "Логин для входа в систему">
+        <span asp-validation-for="User.UserName" class="ErrorText"></span>
+        @Html.ValidationMessage("UserExist")
+    </div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Пароль:</div>
+        <input type="password" asp-for="User.Password" class="LoginCardInput" placeholder = "123456">
+        <span asp-validation-for="User.Password" class="ErrorText"></span>
+    </div>
+
+    <div class="LoginCardInputBlock">
+        <div asp-for = "SelectedTags" class="LoginCardInputTitle">Выбор коллективов:</div>
+        <select asp-for = "SelectedCollectives" asp-items = "Model.CollectivesList"  class="LoginCardInput" id ="LoginCardInput"> </select>
+    </div>
+
+    <div class="LoginButtons">
+        <button class="LoginButton">Регистрация</button>
+    </div>
+    <a asp-page = "Login" class="NotRegistrated">Уже зарегистрированы? Войдите!</a>
+
+</form>
+
+    
+</body>
+</html>

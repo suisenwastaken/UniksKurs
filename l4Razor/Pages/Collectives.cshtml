@@ -1,0 +1,65 @@
+﻿@page
+@model l4Razor.Pages.Collectives
+
+@{
+    ViewData["Title"] = "Коллективы";
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Профиль</title>
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/news.css">
+  <link rel="stylesheet" href="css/profile.css">
+  
+
+  <script src="multiselect-dropdown.js"></script>
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+
+    <div class="HeadContent">
+
+        <div class="HeadText">Список коллективов</div>
+        <div class="HeadIcon"><a asp-page="/PersonalPage"><img src="@Model.PictureUrl" alt="Profile Picture"></a></div>
+        
+    </div>
+
+    <div class="NewsBlock">
+
+        @foreach(var col in Model.CollectiveList)
+        {
+
+            <div class="NewsCard">
+
+                <div class="NewsCardTitle">@col.CollectiveName</div>
+                <div class="NewsCardDescription">@col.CollevtiveDescription</div>
+                <div class="NewsCardDescription">tg: @col.CollectiveLeaderContuct</div>
+                <div class="NewsCardTags">
+
+                    <div class="NewsCardTag">@col.InstituteOfCollective.InstituteName</div>
+                    <div class="NewsCardTag">@col.ThemeOfCollective.ThemeName</div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+</body>

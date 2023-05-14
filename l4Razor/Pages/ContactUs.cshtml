@@ -1,0 +1,59 @@
+﻿@page
+@model l4Razor.Pages.ContactUs
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свяжитесь с нами</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylelogin.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="Logo"><a asp-page = "/Index"><img src="css/images/Vector.png" alt="Website Logo"></a></div>
+
+<form class="LoginCard" method="Post">
+
+
+    <div class="LoginCardTitle">Свяжитесь с нами</div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Ваше имя:</div>
+        <input type="text" asp-for = "Message.Name" class="LoginCardInput" placeholder = "Антон">
+        <span asp-validation-for="Message.Name" class="ErrorText"></span>
+    </div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Тема:</div>
+        <input type="text" asp-for="Message.Theme" class="LoginCardInput" placeholder = "Хочу новые тапочки">
+        <span asp-validation-for="Message.Theme" class="ErrorText"></span>
+    </div>
+
+    <div class="LoginCardInputBlock">
+        <div class="LoginCardInputTitle">Сообщение:</div>
+        <input type="text" asp-for = "Message.MessageText" class="LoginCardInput" placeholder = "Очень хочу новые тапочки">
+        <span asp-validation-for="Message.MessageText" class="ErrorText"></span>
+    </div>
+
+    <div class="LoginButtons">
+        <button class="LoginButton">Отправить</button>
+    </div>
+
+</form>
+
+    
+</body>
+</html>
