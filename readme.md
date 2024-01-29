@@ -1,4 +1,4 @@
-<!-- Improved compatibility of вернуться на верх link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<!-- Improved compatibility of вернуться наверх link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -83,7 +83,7 @@
 Данное веб-приложение создано с целью улучшения организации студенческих событий в рамках КСК Уникс. Это приложение предназначено для эффективной передачи информации, минимизируя неудобства текущей системы и предотвращая утерю данных из-за человеческого фактора.
 
 
-<p align="right">(<a href="#readme-top">вернуться на верх</a>)</p>
+<p align="right">(<a href="#readme-top">вернуться наверх</a>)</p>
 
 
 
@@ -96,7 +96,7 @@
 
 
 
-<p align="right">(<a href="#readme-top">вернуться на верх</a>)</p>
+<p align="right">(<a href="#readme-top">вернуться наверх</a>)</p>
 
 
 
@@ -119,7 +119,7 @@
 2. Запустите проект
    
 
-<p align="right">(<a href="#readme-top">вернуться на верх</a>)</p>
+<p align="right">(<a href="#readme-top">вернуться наверх</a>)</p>
 
 
 
@@ -214,7 +214,7 @@ _Если пользователь авторизован, то сообщени
   <img src="images/pic9.png" alt="Logo" width="auto" height="auto">
 </div>
 
-<p align="right">(<a href="#readme-top">вернуться на верх</a>)</p>
+<p align="right">(<a href="#readme-top">вернуться наверх</a>)</p>
 
 
 
@@ -222,12 +222,12 @@ _Если пользователь авторизован, то сообщени
 <!--
 <!-- CONTACT -->
 ## Контакты
-
+ 
 Руслан - [@telegram](https://t.me/suisenwastaken) - suisenwastaken@gmail.com
 
 Project Link: [https://github.com/suisenwastaken/UniksKurs](https://github.com/suisenwastaken/UniksKurs)
 
-<p align="right">(<a href="#readme-top">вернуться на верх</a>)</p>
+<p align="right">(<a href="#readme-top">вернуться наверх</a>)</p>
 
 
 
@@ -236,7 +236,7 @@ Project Link: [https://github.com/suisenwastaken/UniksKurs](https://github.com/s
 
 * Данный репозиторий содержит полное приложение
 
-<p align="right">(<a href="#readme-top">вернуться на верх</a>)</p>
+<p align="right">(<a href="#readme-top">вернуться наверх</a>)</p>
 
 
 
